@@ -1,11 +1,8 @@
 import torch
-import torch.nn as nn
-import torch.optim as optim
 from torchvision import datasets, transforms
 from sklearn.metrics import confusion_matrix
 import numpy as np
 
-# from vit import VisionTransformer
 
 def evaluate(model):
     # model = VisionTransformer(28, 2, 2, 2, 64, 256, num_classes=10, representation_size=32)
