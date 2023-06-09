@@ -3,13 +3,12 @@ import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
 
-# from vit import VisionTransformer
 
 def train(model):
-    # model = VisionTransformer(28, 2, 2, 2, 64, 256, num_classes=10, representation_size=32)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # Use GPU for training
+    # Use GPU for training if available
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = model.to(device)
     print(f"Using {device} for training.")
-    model = model.to(device)  # Use GPU for training
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)

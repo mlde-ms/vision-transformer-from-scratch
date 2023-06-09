@@ -17,7 +17,6 @@ def visualize_attention_head(attention_head_output, num_patches, patch_size, out
     # Visualize the image in a heatmap
     plt.imshow(scaled_patch_values, cmap='viridis')
     plt.colorbar()
-    # plt.show()
     # Save the figure to the specified file and directory
     os.makedirs(output_dir, exist_ok=True)
     plt.savefig(os.path.join(output_dir, output_file), bbox_inches='tight', dpi=100)
